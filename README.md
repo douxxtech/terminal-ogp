@@ -2,7 +2,7 @@
   <a href="#" style="display: block; text-align: center;">
     <img 
       alt="Image of this repo" 
-      src="https://togp.eu?owner=douxxu&repo=terminal-ogp&theme=json-dark-all&cache=false" 
+      src="https://togp.eu?owner=douxxtech&repo=terminal-ogp&theme=json-dark-all&cache=false" 
       type="image/svg+xml" 
       style="border-radius: 20px; overflow: hidden;" 
     />
@@ -36,7 +36,7 @@
 
 ## Introduction
 
-`Terminal ogp` is providing an alternative to [github opengraphs](https://opengraph.githubassets.com/somerandomshit/douxxu/terminal-ogp) images that i find kinda boring. It uses images that are terminal-like to get a more "tecchie" look that i find cool !
+`Terminal ogp` is providing an alternative to [github opengraphs](https://opengraph.githubassets.com/somerandomshit/douxxtech/terminal-ogp) images that i find kinda boring. It uses images that are terminal-like to get a more "tecchie" look that i find cool !
 
 <h6>Terminal-ogp is a <a href="https://dpip.lol" target="_blank">DPIP.lol</a> project.</h6>
 
@@ -70,7 +70,7 @@ This will show the image in your readme, make sure to replace `YOUR_USERNAME` an
 Use `?theme=THEME_NAME` parameter like so:
 
 ```md
-![togp](https://togp.eu/?owner=douxxu&repo=terminal-ogp&theme=json-dark-all)
+![togp](https://togp.eu/?owner=douxxtech&repo=terminal-ogp&theme=json-dark-all)
 ```
 
 [Check all the themes here !](themes/THEMES.md)
@@ -122,4 +122,4 @@ However, if the error message doesn't help you, [consider opening an issue](http
 <img src="https://prv-readme-views.dpip.lol/v3_2">
 
 ----
-Made by douxxu | douxx.tech | dpip.lol
+Made by douxxtech | douxx.tech | dpip.lol
