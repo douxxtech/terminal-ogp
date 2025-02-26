@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" style="font-family: 'Monospace', monospace;">
+    <rect width="1200" height="600" fill="black" />
+
+    <text x="60" y="100" font-size="22" fill="white">{{owner}}@github ~$ curl http://{{repo}}:{{stars}}</text>
+
+    <text x="60" y="150" font-size="20" class="text" fill="white">&lt;title&gt;{{owner}}/{{repo}} WebStats&lt;/title&gt;</text>
+    <foreignObject x="60" y="180" width="1080" height="80">
+        <body xmlns="http://www.w3.org/1999/xhtml" style="margin: 0; padding: 0;">
+            <div style="color: white; font-size: 20px; max-height: 80px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                &lt;meta name="description"&gt;{{description}}&lt;/meta&gt;
+            </div>
+        </body>
+    </foreignObject>
+
+    <text x="60" y="280" font-size="20" class="text" fill="white">&lt;h1&gt;{{owner}}/{{repo}}&lt;/h1&gt;</text>
+    <text x="60" y="310" font-size="20" class="text" fill="white">&lt;p&gt;Stars: {{stars}}&lt;p&gt;</text>
+    <text x="60" y="340" font-size="20" class="text" fill="white">&lt;p&gt;Contributors: {{contributors}}&lt;p&gt;</text>
+    <text x="60" y="370" font-size="20" class="text" fill="white">&lt;p&gt;Issues: {{issues}}&lt;p&gt;</text>
+    <text x="60" y="400" font-size="20" class="text" fill="white">&lt;p&gt;Forks {{forks}}&lt;p&gt;</text>
+    <text x="60" y="430" font-size="20" class="text" fill="white">&lt;p&gt;Main Language: {{language}}&lt;p&gt;</text>
+</svg>

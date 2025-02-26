@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" style="font-family: 'Monospace', monospace;">
+    <rect width="1200" height="600" fill="white" />
+
+    <text x="60" y="100" font-size="22" fill="black">{{owner}}@github ~$ ./{{repo}}.sh</text>
+
+    <foreignObject x="60" y="150" width="1080" height="80">
+        <body xmlns="http://www.w3.org/1999/xhtml" style="margin: 0; padding: 0;">
+            <div style="color: black; font-size: 20px; max-height: 80px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                $! {{description}}
+            </div>
+        </body>
+    </foreignObject>
+
+    <text x="60" y="250" font-size="20" fill="black">┌──┤ {{owner}}/{{repo}} ├─────────▰▰▰</text>
+    <text x="60" y="280" font-size="20" fill="black">├─▣ Stars: {{stars}}</text>
+    <text x="60" y="310" font-size="20" fill="black">├─▣ Contributors: {{contributors}}</text>
+    <text x="60" y="340" font-size="20" fill="black">├─▣ Issues: {{issues}}</text>
+    <text x="60" y="370" font-size="20" fill="black">├─▣ Forks: {{forks}}</text>
+    <text x="60" y="400" font-size="20" fill="black">├─▣ Main language: {{language}}</text>
+    <text x="60" y="430" font-size="20" fill="black">└───────────────────────────────▰▰▰</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" style="font-family: 'Monospace', monospace;">
+
+    <style>
+        .text { font-family: monospace; font-size: 18px; fill: #ffffff; }
+        .key { fill: #61afef; }
+        .value { fill: #98c379; }
+        .string { fill: #e06c75; }
+        .comment { fill: #7f848e; }
+    </style>
+    <rect width="1200" height="600" fill="black" />
+    
+    <text x="60" y="100" font-size="22" class="text">{{owner}}@github ~$ cat repo.json</text>
+    <text x="60" y="150" font-size="20" class="text">{<tspan class="key">"name": </tspan><tspan class="string">"{{repo}}"</tspan><tspan class="text">,</tspan></text>
+    <text x="60" y="180" font-size="20" class="text"><tspan class="key">"owner": </tspan><tspan class="string">"{{owner}}"</tspan><tspan class="text">,</tspan></text>
+    <text x="60" y="210" font-size="20" class="text"><tspan class="key">"stars": </tspan><tspan class="value">{{stars}}</tspan><tspan class="text">,</tspan></text>
+    <text x="60" y="240" font-size="20" class="text"><tspan class="key">"forks": </tspan><tspan class="value">{{forks}}</tspan><tspan class="text">,</tspan></text>
+    <text x="60" y="270" font-size="20" class="text"><tspan class="key">"issues": </tspan><tspan class="value">{{issues}}</tspan><tspan class="text">,</tspan></text>
+    <text x="60" y="300" font-size="20" class="text"><tspan class="key">"language": </tspan><tspan class="string">"{{language}}"</tspan><tspan class="text"></tspan>}</text>
+</svg>
+ 

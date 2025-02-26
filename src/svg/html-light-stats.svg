@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" style="font-family: 'Monospace', monospace;">
+    <rect width="1200" height="600" fill="white" />
+
+    <text x="60" y="100" font-size="22" fill="black">{{owner}}@github ~$ curl http://{{repo}}:{{stars}}</text>
+
+    <text x="60" y="150" font-size="20" class="text" fill="black">&lt;title&gt;{{owner}}/{{repo}} WebStats&lt;/title&gt;</text>
+
+    <text x="60" y="200" font-size="20" class="text" fill="black">&lt;h1&gt;{{owner}}/{{repo}}&lt;/h1&gt;</text>
+    <text x="60" y="230" font-size="20" class="text" fill="black">&lt;p&gt;Stars: {{stars}}&lt;p&gt;</text>
+    <text x="60" y="260" font-size="20" class="text" fill="black">&lt;p&gt;Contributors: {{contributors}}&lt;p&gt;</text>
+    <text x="60" y="290" font-size="20" class="text" fill="black">&lt;p&gt;Issues: {{issues}}&lt;p&gt;</text>
+    <text x="60" y="320" font-size="20" class="text" fill="black">&lt;p&gt;Forks {{forks}}&lt;p&gt;</text>
+    <text x="60" y="350" font-size="20" class="text" fill="black">&lt;p&gt;Main Language: {{language}}&lt;p&gt;</text>
+</svg>

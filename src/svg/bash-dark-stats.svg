@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" style="font-family: 'Monospace', monospace;">
+    <rect width="1200" height="600" fill="black" />
+    
+    <text x="60" y="100" font-size="22" fill="white">{{owner}}@github ~$ ./{{repo}}.sh</text>
+    <text x="60" y="150" font-size="20" fill="white">┌──┤ {{owner}}/{{repo}} ├─────────▰▰▰</text>
+    <text x="60" y="180" font-size="20" fill="white">├─▣ Stars: {{stars}}</text>
+    <text x="60" y="210" font-size="20" fill="white">├─▣ Contributors: {{contributors}}</text>
+    <text x="60" y="240" font-size="20" fill="white">├─▣ Issues: {{issues}}</text>
+    <text x="60" y="270" font-size="20" fill="white">├─▣ Forks: {{forks}}</text>
+    <text x="60" y="300" font-size="20" fill="white">├─▣ Main language: {{language}}</text>
+    <text x="60" y="330" font-size="20" fill="white">└───────────────────────────────▰▰▰</text>
+</svg>
