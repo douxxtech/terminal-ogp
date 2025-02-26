@@ -2,7 +2,7 @@
   <a href="#" style="display: block; text-align: center;">
     <img 
       alt="Image of this repo" 
-      src="https://togp.eu?owner=douxxtech&repo=terminal-ogp&theme=json-dark-all&cache=false" 
+      src="https://togp.xyz?owner=douxxtech&repo=terminal-ogp&theme=json-dark-all&cache=false" 
       type="image/svg+xml" 
       style="border-radius: 20px; overflow: hidden;" 
     />
@@ -28,7 +28,7 @@
 # Important Notices
 
 > [!IMPORTANT]\
-> Since the GitHub API only [allows 5k requests per hour per user account](https://docs.github.com/en/graphql/overview/resource-limitations), the public instance hosted on `https://togp.eu` could possibly hit the rate limited and result in a ratelimit error response. To avoid this, prioritze using caching on github or [deploying your own instance](#deployment)
+> Since the GitHub API only [allows 5k requests per hour per user account](https://docs.github.com/en/graphql/overview/resource-limitations), the public instance hosted on `https://togp.xyz` could possibly hit the rate limited and result in a ratelimit error response. To avoid this, prioritze using caching on github or [deploying your own instance](#deployment)
 
 > [!IMPORTANT]\
 > This is a small project, and the host is not free. To support me, consider starring this repo!
@@ -56,7 +56,7 @@
 ### 1. In a ReadMe
 To use a terminal opengraph in your readme, take this following code and paste it into your readme:
 ```md
-![Terminal GitOpenGraphImage](https://togp.eu/?owner=YOUR_USERNAME&repo=YOUR_REPO&avatar=false)
+![Terminal GitOpenGraphImage](https://togp.xyz/?owner=YOUR_USERNAME&repo=YOUR_REPO&avatar=false)
 ```
 This will show the image in your readme, make sure to replace `YOUR_USERNAME` and `YOUR_REPO` by the actual values. Setting avatar to true will add your avatar in the bottom right corner.
 
@@ -70,7 +70,7 @@ This will show the image in your readme, make sure to replace `YOUR_USERNAME` an
 Use `?theme=THEME_NAME` parameter like so:
 
 ```md
-![togp](https://togp.eu/?owner=douxxtech&repo=terminal-ogp&theme=json-dark-all)
+![togp](https://togp.xyz/?owner=douxxtech&repo=terminal-ogp&theme=json-dark-all)
 ```
 
 [Check all the themes here !](themes/THEMES.md)
@@ -112,7 +112,7 @@ A: I don't want any money. But you can star this repo or follow me !
 
 The API may can return an error page if something went wrong or is missing.  
 
-![Error image](https://togp.eu/svg/error.svg)
+![Error image](https://togp.xyz/svg/error.svg)
 
 The error message will most of the time tell where the error occured, so just follow the instructions to fix it.
 However, if the error message doesn't help you, [consider opening an issue](https://github.com/douxxtech/terminal-ogp/issues/new)
