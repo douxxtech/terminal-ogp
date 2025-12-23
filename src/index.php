@@ -23,8 +23,31 @@ if (isset($_GET['cache']) && strtolower($_GET['cache']) === 'false') {
     header('Pragma: no-cache');
 }
 
+// fallback url if something goes wrong
+$failUrl = null;
+
+if (isset($_GET['failurl'])) {
+    $candidate = $_GET['failurl'];
+
+    if (filter_var($candidate, FILTER_VALIDATE_URL)) {
+        $parsed = parse_url($candidate);
+
+        if (isset($parsed['scheme']) && in_array($parsed['scheme'], ['http', 'https'], true)) {
+            $failUrl = $candidate;
+        }
+    }
+}
+
 //to return error.svg if something failed
 function sendErrorResponse($errorMessage) {
+    global $failUrl;
+
+    if ($failUrl !== null) {
+        $separator = str_contains($failUrl, '?') ? '&' : '?';
+        header('Location: ' . $failUrl . $separator . 'error=' . urlencode($errorMessage), true, 302);
+        exit;
+    }
+
     header('Content-Type: image/svg+xml');
     $errorSVG = file_get_contents('svg/error.svg');
     $errorSVG = str_replace('{{errorMessage}}', htmlspecialchars($errorMessage), $errorSVG);
