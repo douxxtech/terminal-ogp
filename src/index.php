@@ -53,15 +53,62 @@ function fetchGitHubRepo($owner, $repo) {
     return json_decode($response, true);
 }
 
+function fetchExternalSVG(string $url): string {
+    if (!filter_var($url, FILTER_VALIDATE_URL)) {
+        sendErrorResponse('Invalid SVG URL.');
+    }
+
+    $parsed = parse_url($url);
+    if (!isset($parsed['scheme']) || $parsed['scheme'] !== 'https') {
+        sendErrorResponse('Only HTTPS SVG URLs are allowed.');
+    }
+
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_TIMEOUT => 5,
+        CURLOPT_USERAGENT => 'terminalGitOpenGraph',
+        CURLOPT_MAXREDIRS => 3,
+    ]);
+
+    $svg = curl_exec($ch);
+
+    if (curl_errno($ch)) {
+        sendErrorResponse('Failed to fetch external SVG.');
+    }
+
+    $contentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
+    curl_close($ch);
+
+    if (
+        !$svg ||
+        strpos($svg, '<svg') === false ||
+        ($contentType && !str_contains($contentType, 'image/svg'))
+    ) {
+        sendErrorResponse('URL does not point to a valid SVG.');
+    }
+
+    if (strlen($svg) > 200_000) {
+        sendErrorResponse('SVG file too large.');
+    }
+
+    $svg = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $svg); #prevent scripts
+
+    return $svg;
+}
+
+
 //checks if the owner and repo parameters are here
 if (!isset($_GET['owner']) || !isset($_GET['repo'])) {
     sendErrorResponse('Missing owner or repo parameter.');
 }
-
+$ownerRaw = $_GET['owner'];
+$repoRaw  = $_GET['repo'];
 $owner = htmlspecialchars($_GET['owner']);
 $repo = htmlspecialchars($_GET['repo']);
 
-$repoData = fetchGitHubRepo($owner, $repo);
+$repoData = fetchGitHubRepo($ownerRaw, $repoRaw);
 
 //checks if the response is okey
 if (isset($repoData['message'])) {
@@ -75,12 +122,20 @@ if (isset($repoData['message'])) {
 }
 
 //get the theme or use the theme bash-dark-status by default
-$theme = isset($_GET['theme']) ? htmlspecialchars($_GET['theme']) : 'bash-dark-stats';
-$themeFile = "svg/$theme.svg";
 
-if (!file_exists($themeFile)) {
-    sendErrorResponse('Theme not found.');
+if (isset($_GET['svg'])) {
+    $svgContent = fetchExternalSVG($_GET['svg']);
+} else {
+    $theme = isset($_GET['theme']) ? htmlspecialchars($_GET['theme']) : 'bash-dark-stats';
+    $themeFile = "svg/$theme.svg";
+
+    if (!file_exists($themeFile)) {
+        sendErrorResponse('Theme not found.');
+    }
+
+    $svgContent = file_get_contents($themeFile);
 }
+
 
 //To not show big numbers, format the numbers to k
 function formatNumber($number) {
@@ -104,7 +159,6 @@ $license = htmlspecialchars(isset($repoData['license']['name']) ? $repoData['lic
 $ownerLogin = htmlspecialchars($repoData['owner']['login'] ?? 'Unknown');
 $ownerAvatarUrl = htmlspecialchars($repoData['owner']['avatar_url'] ?? '');
 
-$svgContent = file_get_contents($themeFile);
 $svgContent = str_replace(
     ['{{owner}}', '{{repo}}', '{{stars}}', '{{contributors}}', '{{issues}}', '{{forks}}', '{{language}}', '{{defaultBranch}}', '{{createdAt}}', '{{updatedAt}}', '{{description}}', '{{homepage}}', '{{license}}', '{{ownerLogin}}', '{{ownerAvatarUrl}}'],
     [$owner, $repo, $stars, $contributors, $issues, $forks, $language, $defaultBranch, $createdAt, $updatedAt, $description, $homepage, $license, $ownerLogin, $ownerAvatarUrl],

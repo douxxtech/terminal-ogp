@@ -75,6 +75,8 @@ Use `?theme=THEME_NAME` parameter like so:
 
 [Check all the themes here !](themes/THEMES.md)
 
+You can also use `?svg=https://example.com/mysvg.svg` if you have a custom svg file
+
 ## Deployment
 To host your very own version of this project, follow those easy steps:
 
