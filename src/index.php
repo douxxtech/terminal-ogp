@@ -2,8 +2,6 @@
 /*
 
 By github.com/douxxtech
-A DPIP.lol project.
-
 -------------------------
 
 Replace "YOUR_GITHUB_TOKEN" by a real github account token (needs the repos perms)

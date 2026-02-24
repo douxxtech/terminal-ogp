@@ -38,8 +38,6 @@
 
 `Terminal ogp` is providing an alternative to [github opengraphs](https://opengraph.githubassets.com/somerandomshit/douxxtech/terminal-ogp) images that i find kinda boring. It uses images that are terminal-like to get a more "tecchie" look that i find cool !
 
-<h6>Terminal-ogp is a <a href="https://dpip.lol" target="_blank">DPIP.lol</a> project.</h6>
-
 ## Features
 
 - [X] Themes
@@ -120,9 +118,6 @@ The API may can return an error page if something went wrong or is missing.
 The error message will most of the time tell where the error occured, so just follow the instructions to fix it.
 However, if the error message doesn't help you, [consider opening an issue](https://github.com/douxxtech/terminal-ogp/issues/new)
 
-## Readme Views
-
-<img src="https://prv-readme-views.dpip.lol/v3_2">
-
 ----
-Made by douxxtech | douxx.tech | dpip.lol
+
+![](https://madeby.douxx.tech)
